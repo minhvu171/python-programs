@@ -41,6 +41,7 @@ class Product:
     def get_stock(self):
         """
         fetch the stock size
+
         :return: the stock size
         """
 
@@ -49,6 +50,7 @@ class Product:
     def get_price(self):
         """
         fetch the price
+
         :return: the price
         """
 
@@ -57,6 +59,7 @@ class Product:
     def get_category(self):
         """
         fetch the category
+
         :return: the category
         """
 
@@ -135,12 +138,14 @@ class Product:
 
         :param sale: float, how much the price will be put on sale
         """
+
         self.__price = self.__original_price*(100-sale)/100
 
     def same_price(self, product):
         """
         Check if two products are of the same price or not. This method is
         utilized in the combine_command.
+
         :param product: Product, the target product whose price will be
         compared.
 
@@ -204,12 +209,12 @@ class Product:
 
 def _read_lines_until(fd, last_line):
     """
-
+    (This is an already provided function)
     Reads lines from <fd> until the <last_line> is found.
     Returns a list of all the lines before the <last_line>
     which is not included in the list. Return None if
-    file ends bofore <last_line> is found.
-    Skips empty lines and comments (i.e. characeter '#'
+    file ends before <last_line> is found.
+    Skips empty lines and comments (i.e. character '#'
     and everything after it on a line).
 
     You don't need to understand this function works as it is
@@ -246,7 +251,7 @@ def _read_lines_until(fd, last_line):
 
 def read_database(filename):
     """
-
+    (This is an already provided function)
     This function reads an input file which must be in the format
     explained in the assignment. Returns a dict containing
     the product code as the key and the corresponding Product
@@ -341,6 +346,7 @@ def delete_command(warehouse, parameters):
     :param warehouse: dict[int, Product], dict of all known products.
     :param parameters: str, parameter of the command.
     """
+
     try:
         code = int(parameters)
     except ValueError:

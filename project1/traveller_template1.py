@@ -14,9 +14,9 @@ from a city to another city.
 
 def find_route(data, departure, destination):
     """
-    This function tries to find a route between <departure>
-    and <destination> cities. It assumes the existence of
-    the two functions fetch_neighbours and distance_to_neighbour
+    This function, an already provided function, tries to find
+    a route between <departure> and <destination> cities. It assumes
+    the existence of the two functions fetch_neighbours and distance_to_neighbour
     (see the assignment and the function templates below).
     They are used to get the relevant information from the data
     structure <data> for find_route to be able to do the search.
@@ -34,12 +34,6 @@ def find_route(data, departure, destination):
            and the destination cities are the same, the function returns
            a two element list where the departure city is stored twice.
     """
-
-    # +--------------------------------------+
-    # |                                      |
-    # |     DO NOT MODIFY THIS FUNCTION!     |
-    # |                                      |
-    # +--------------------------------------+
 
     if departure not in data:
         return []
@@ -138,6 +132,7 @@ def fetch_neighbours(data, city):
              a departure city in <data>) or if there are no
              arrows leaving from the <city>.
     """
+
     # create an empty list which is meant for containing the neighbouring city of the parameter city
     neighbours_list = []
     if city in data:
@@ -185,8 +180,10 @@ def distance_to_neighbour(data, departure, destination):
 def add(distance_dict):
     """"
     This function add a new connection from either a known or unknown city to a new destination
+    
     :param distance_dict: the data structure containing the information read from the input file
     """""
+
     departure_city = input("Enter departure city: ")
     destination_city = input("Enter destination city: ")
     distance = input("Distance: ")
@@ -207,8 +204,10 @@ def add(distance_dict):
 def remove(distance_dict):
     """"
     This function remove a connection from a known city to one of its destination
+
     :param distance_dict: the data structure containing the information read from the input file
     """
+
     departure_city = input("Enter departure city: ")
     # checking if this city can be departure from or not.
     if departure_city not in distance_dict:
@@ -226,8 +225,10 @@ def remove(distance_dict):
 def neighbouring(distance_dict):
     """"
     This function prints all the connection from a departure city to any of its destination
+
     :param distance_dict: the data structure containing the information read from the input file
     """
+
     departure_city = input("Enter departure city: ")
     # check if this city is a known city or not by checking if it can be departure from,
     # and it could be a destination or not
@@ -247,10 +248,12 @@ def checking_city(data, city):
     """"
     This function test if a city that can't be departure from is known or not (can be a destination to go to from
     other cities or not)
+
     :param data: the data structure containing the information read from the input file
     :param city: the city which will be tested
     :return list: a list containing known city
     """
+
     known_city = []
     unknown_city = []
     for departure_city in data:
@@ -268,6 +271,7 @@ def print_route(data):
 
     :param data: the data structure containing the information read from the input file
     """
+
     departure = input("Enter departure city: ")
     # check if the departure city is unknown or not
     if departure not in data:
